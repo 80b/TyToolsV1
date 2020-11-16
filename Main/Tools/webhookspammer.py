@@ -8,9 +8,21 @@ print("")
 print("-" * 20)
 
 
-user = input("[" + Fore.GREEN + "SYSTEM" + Fore.WHITE + "] What is he username youd like?")
+user = input("[" + Fore.GREEN + "SYSTEM" + Fore.WHITE + "] What is the username youd like?: ")
 webhook = input(Fore.RED +">>Please enter the Webhook: ") # input for webhook url
-text = input(">>Please enter the Message that should be spammed: ") # asks for message
+text = input(">>Please enter the Message that should be spammed: ")
+everyonespam = input("Would you like to spam @everyone? Y/n: ")
+
+if everyonespam == "Y":
+	text += " @everyone"
+else:
+	pass
+
+if everyonespam == "y":
+	text += " @everyone"
+else:
+	pass
+# asks for message
 
 if platform.system() == "Windows": # checking the OS of the device running the tool
     clearcmd = "cls"
@@ -32,7 +44,7 @@ def send(i):
         res = 'waited ' + Fore.RED + str(res.json()["retry_after"]) + 'ms.'
     except:
         i += 1
-        res = "Sent message " + text + " successful."
+        res = "Sent message " + text + " successful, EZ."
     print(Fore.MAGENTA + res + Fore.MAGENTA + ' Amount of messages already sent: ' + Fore.CYAN + str(i)) # message for feedback lol
     return i
 i = 0
