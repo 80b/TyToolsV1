@@ -20,7 +20,7 @@ else:
 os.system(clearcmd)
 
 data = {
-    "content": text # data for webhook as json
+    "content": text, # data for webhook as json
     "username": user
 }
 def send(i):
